@@ -1,0 +1,110 @@
+@mixin font-face($style-name, $file:$style-name, $weight:normal, $style:normal) {
+    $filepath: "../fonts/" + $file;
+    @font-face {
+        font-family: quote($style-name);
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'),
+        url($filepath + ".woff") format('woff'),
+        url($filepath + ".ttf") format('truetype'),
+        url($filepath + ".svg#" + $style-name + "") format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+@include font-face("Futura", "Futura-Medium", 500, normal);
+@include font-face("Montserrat", "Montserrat-Bold", 700, normal);
+@include font-face("Montserrat", "Montserrat-Regular", 400, normal);
+@include font-face("Poppins", "Poppins-Light", 400, normal);
+@include font-face("Poppins", "Poppins-SemiBold", 600, normal);
+
+:root{
+    --color-white: #fff;
+    --color-black: #181A1D;
+    --color-subtitle: #4FB2F6;
+    --color-title: #E5E5E5;
+    --color-back: #181A1D;
+    --color-back-main: #1D2831;
+    --color-footer: #364149;
+    --color-footer-border: #D1D1D2;
+    --color-brands: #1A2025;
+    --color-reading: #262938;
+    --color-resources: #7A7A7A;
+    --color-shadow: rgba(79, 178, 246, 0.5);
+    --color-blog-social: rgba(29, 40, 49, 0.4);
+    --gradient-circle: radial-gradient(36.25% 36.25% at 50% 50%, rgba(79, 178, 246, 0.3) 0%, rgba(24, 26, 29, 0.3) 100%);
+    --Futura: 'Futura', sans-serif;
+    --Montserrat: 'Montserrat', sans-serif;
+    --Poppins: 'Poppins', sans-serif;
+}
+
+/* base styles*/
+*,*:before,
+*:after {
+    box-sizing: border-box;
+    outline: none;
+}
+*,body,html {
+    -webkit-text-size-adjust: none;
+    -webkit-appearance: none;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+        text-decoration: none;
+    }
+}
+html {
+    font-size: 10px;
+
+    @media only screen and ( min-width: 2560px) {
+        font-size: 17.77px;
+    }
+
+    @media only screen and ( min-width: 1920px) {
+        font-size: 13.3px;
+    }
+
+    @media only screen and ( max-width: 1680px) {
+        font-size: 11.66px;
+    }
+
+    @media only screen and (max-width: 1440px) {
+        font-size: 10px;
+    }
+
+    @media only screen and (max-width: 1366px) {
+        font-size: 9.49px;
+    }
+
+    @media only screen and ( max-width: 1280px){
+        font-size: 8.88px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        font-size: 7.11px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        font-size: 5.33px;
+    }
+
+    @media only screen and (max-width: 666px) {
+        font-size: 10px;
+    }
+}
